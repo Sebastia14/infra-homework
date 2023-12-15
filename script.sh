@@ -5,6 +5,8 @@ AWS_REGION="us-east-1"
 
 # Create VPC
 echo "Creating VPC..."
+
+
 vpc_id=$(aws ec2 create-vpc --cidr-block 10.0.0.0/16 --region $AWS_REGION --output json | jq -r '.Vpc.VpcId')
 
 # Create internet gateway
